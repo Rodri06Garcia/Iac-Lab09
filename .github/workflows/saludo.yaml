@@ -9,14 +9,12 @@ on:
 jobs:
   saludo:
     runs-on: ubuntu-latest
-    # 1. Definimos la variable a nivel del Job
     env:
       NOMBRE_ESTUDIANTE: "Rodrigo Garcia" 
 
     steps:
       - name: Saludo desde main
         if: github.ref == 'refs/heads/main'
-        # 2. Llamamos a la variable usando la sintaxis de GitHub Actions
         run: echo "Hola desde main, mi nombre es ${{ env.NOMBRE_ESTUDIANTE }}"
 
       - name: Saludo desde develop
