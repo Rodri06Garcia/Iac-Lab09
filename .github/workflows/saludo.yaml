@@ -1,4 +1,4 @@
-name: Demostración de un pipeline de GithubActions
+name: Demostracion de un pipeline de GithubActions
 
 on:
   push:
@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Saludo desde main
         if: github.ref == 'refs/heads/main'
-        run: echo "Hola desde main, mi nombre es Rodrigo Garcia
+        run: echo "Hola desde main, mi nombre es Rodrigo Garcia"
 
       - name: Saludo desde develop
         if: github.ref == 'refs/heads/develop'
-        run: echo "Hola desde develop, mi nombre es Rodrigo Garcia
+        run: echo "Hola desde develop, mi nombre es Rodrigo Garcia" 
