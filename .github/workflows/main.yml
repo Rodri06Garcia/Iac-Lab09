@@ -1,0 +1,14 @@
+name: Demostracion de un pipeline de GithubActions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Saludo desde main
+        run: echo "Hola desde main, mi nombre es Rodrigo Garcia"
