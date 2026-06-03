@@ -5,7 +5,9 @@ on:
     branches:
       - main
       - develop
-
+env:
+  NOMBRE: "Rodrigo Garcia"
+  
 jobs:
   saludo:
     runs-on: ubuntu-latest
