@@ -1,22 +1,24 @@
-name: Demostracion de un pipeline de GithubActions
+name: Demostración de un pipeline de GithubActions
 
 on:
   push:
     branches:
       - main
       - develop
-env:
-  NOMBRE: "Rodrigo Garcia"
-  
+
 jobs:
   saludo:
     runs-on: ubuntu-latest
+    # 1. Definimos la variable a nivel del Job
+    env:
+      NOMBRE_ESTUDIANTE: "Rodrigo Garcia" 
 
     steps:
       - name: Saludo desde main
         if: github.ref == 'refs/heads/main'
-        run: echo "Hola desde main, mi nombre es Rodrigo Garcia"
+        # 2. Llamamos a la variable usando la sintaxis de GitHub Actions
+        run: echo "Hola desde main, mi nombre es ${{ env.NOMBRE_ESTUDIANTE }}"
 
       - name: Saludo desde develop
         if: github.ref == 'refs/heads/develop'
-        run: echo "Hola desde develop, mi nombre es Rodrigo Garcia" 
+        run: echo "Hola desde develop, mi nombre es ${{ env.NOMBRE_ESTUDIANTE }}"
